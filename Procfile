@@ -1,1 +1,1 @@
-web:gunicorn perfecto.wsgi
+web: gunicorn perfecto.wsgi
