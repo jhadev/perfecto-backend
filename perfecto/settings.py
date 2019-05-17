@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'wines.apps.WinesConfig', 'rest_framework', 'corsheaders'
 ]
 
+MIDDLEWARE_CLASSES = ('perfecto.CorsMiddleware')
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -51,8 +53,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'wines.CorsMiddleware'
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 ROOT_URLCONF = 'perfecto.urls'
@@ -122,10 +123,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 
 # add more domains here
-CORS_ORIGIN_WHITELIST = ('http//:localhost:3000', )
+# CORS_ORIGIN_WHITELIST = ('http//:localhost:3000', )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
