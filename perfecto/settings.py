@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
     'django.contrib.messages', 'django.contrib.staticfiles',
-    'wines.apps.WinesConfig', 'rest_framework'
+    'wines.apps.WinesConfig', 'rest_framework', 'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'perfecto.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'perfecto.urls'
@@ -119,6 +120,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+# add more domains here
+CORS_ORIGIN_WHITELIST = ('http//:localhost:3000', )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
